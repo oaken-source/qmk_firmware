@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, DE_EXLM, DE_DQUO, DE_SECT,  DE_DLR, DE_PERC,                      DE_AMPR, DE_SLSH, DE_LPRN, DE_RPRN,  DE_EQL,  DE_QUES,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, DE_CIRC,  DE_DEG, DE_QUOT, XXXXXXX, XXXXXXX,                      DE_ACUT, DE_LCBR, DE_LBRC, DE_RBRC, DE_RBRC, DE_BSLS,
+      KC_LCTL, DE_CIRC,  DE_DEG, DE_QUOT, XXXXXXX, XXXXXXX,                      DE_ACUT, DE_LCBR, DE_LBRC, DE_RBRC, DE_RCBR, DE_BSLS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, DE_LABK, DE_RABK, DE_PIPE, XXXXXXX, XXXXXXX,                      DE_PLUS, DE_ASTR, DE_TILD, DE_HASH, DE_QUOT, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
