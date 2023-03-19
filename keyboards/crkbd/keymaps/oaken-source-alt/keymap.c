@@ -302,6 +302,10 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 static void print_logo_narrow(void) {
     render_logo();
 
+    /* version */
+    oled_set_cursor(0, 4);
+    oled_write(" v1.0", false);
+
     /* wpm counter */
     oled_set_cursor(0, 14);
     oled_write(get_u8_str(current_wpm, '0'), false);
