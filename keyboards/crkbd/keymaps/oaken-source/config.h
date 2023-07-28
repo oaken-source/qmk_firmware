@@ -29,7 +29,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 //#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
+#define TAPPING_TERM 200
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
 
 #define SPLIT_USB_DETECT
 #define SPLIT_WPM_ENABLE

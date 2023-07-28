@@ -18,56 +18,122 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include <stdio.h>
+#include <keymap_german.h>
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
+       KC_TAB,    DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                         DE_Z,    DE_U,    DE_I,    DE_O,    DE_P, DE_UDIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+      KC_LCTL,    DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                         DE_H,    DE_J,    DE_K,    DE_L, DE_ODIA, DE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
+      KC_LSFT,    DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,                         DE_N,    DE_M, DE_COMM,  DE_DOT, DE_MINS, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   MO(1),  KC_SPC,     KC_ENT,   MO(2), KC_RALT
+                                          KC_LGUI,   MO(1),  KC_ENT,     KC_SPC,   MO(2), KC_RALT
                                       //`--------------------------'  `--------------------------'
-
   ),
 
   [1] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+       KC_TAB,    DE_1,    DE_2,    DE_3,    DE_4,    DE_5,                         DE_6,    DE_7,    DE_8,    DE_9,    DE_0,   DE_SS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   MO(3), KC_RALT
+                                          KC_LGUI, _______,  KC_ENT,    KC_BSPC,   MO(3), KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
+       KC_TAB, DE_EXLM, DE_DQUO, DE_SECT,  DE_DLR, DE_PERC,                      DE_AMPR, DE_SLSH, DE_LPRN, DE_RPRN,  DE_EQL,  DE_QUES,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
+      KC_LCTL, DE_CIRC,  DE_DEG, DE_QUOT, XXXXXXX, XXXXXXX,                      DE_ACUT, DE_LCBR, DE_LBRC, DE_RBRC, DE_RCBR, DE_BSLS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
+      KC_LSFT, DE_LABK, DE_RABK, DE_PIPE, XXXXXXX, XXXXXXX,                      DE_PLUS, DE_ASTR, DE_TILD, DE_HASH, DE_QUOT, KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   MO(3),  KC_SPC,     KC_ENT, _______, KC_RALT
+                                          KC_LGUI,   MO(3),  KC_ENT,     KC_SPC, _______, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                        DF(4), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LGUI, _______,  KC_ENT,     KC_SPC, _______, KC_RALT
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [4] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB, DE_SCLN, DE_COMM,  DE_DOT,    DE_P,    DE_Y,                         DE_F,    DE_G,    DE_C,    DE_R,    DE_L, DE_SLSH,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LCTL,    DE_A,    DE_O,    DE_E,    DE_U,    DE_I,                         DE_D,    DE_H,    DE_T,    DE_N,    DE_S, DE_MINS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT, DE_QUOT,    DE_Q,    DE_J,    DE_K,    DE_X,                         DE_B,    DE_M,    DE_W,    DE_V,    DE_Z, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LGUI,   MO(5),  KC_SPC,     KC_ENT,   MO(6), KC_RALT
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [5] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB,    DE_1,    DE_2,    DE_3,    DE_4,    DE_5,                         DE_6,    DE_7,    DE_8,    DE_9,    DE_0,   DE_SS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LCTL, DE_ADIA, DE_ODIA, XXXXXXX, DE_UDIA, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX,  KC_ESC,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   MO(7), KC_RALT
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [6] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB, DE_AMPR, DE_LBRC, DE_LCBR, DE_RCBR, DE_LPRN,                       DE_EQL, DE_ASTR, DE_RPRN, DE_PLUS, DE_RBRC, DE_EXLM,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LCTL, DE_TILD,  DE_DLR,  DE_DEG, XXXXXXX, XXXXXXX,                      XXXXXXX, DE_PIPE, DE_PERC, DE_CIRC,   DE_AT, DE_BSLS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT,  DE_GRV, DE_SECT, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DE_HASH, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LGUI,   MO(7),  KC_SPC,     KC_ENT, _______, KC_RALT
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [7] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                        DF(0), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT
                                       //`--------------------------'  `--------------------------'
   )
+};
+
+const key_override_t comm_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_COMM, DE_LABK, 1<<4);
+const key_override_t dot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_DOT, DE_RABK, 1<<4);
+const key_override_t scln_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_SCLN, DE_COLN, 1<<4);
+const key_override_t quot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_QUOT, DE_DQUO, 1<<4);
+const key_override_t slsh_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_SLSH, DE_QUES, 1<<4);
+const key_override_t mins_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_MINS, DE_UNDS, 1<<4);
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&comm_key_override,
+  &dot_key_override,
+  &scln_key_override,
+  &quot_key_override,
+  &slsh_key_override,
+  &mins_key_override,
+	NULL // Null terminate the array of overrides!
 };
 
 #ifdef OLED_ENABLE
@@ -86,6 +152,10 @@ static void render_logo(void) {
 };
     oled_write_raw_P(hexagram_logo, sizeof(hexagram_logo));
 }
+
+bool isModelFlashing = false;
+uint32_t flashing_timer = 0;
+uint32_t flashing_frame = 0;
 
 /* KEYBOARD PET START */
 
@@ -232,6 +302,10 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 static void print_logo_narrow(void) {
     render_logo();
 
+    /* version */
+    oled_set_cursor(0, 4);
+    oled_write(" v1.0", false);
+
     /* wpm counter */
     oled_set_cursor(0, 14);
     oled_write(get_u8_str(current_wpm, '0'), false);
@@ -254,15 +328,42 @@ static void print_logo_narrow(void) {
 
 static void print_status_narrow(void) {
 
+    /* Print current model */
     oled_write("MODEL", false);
-    oled_write("andi", false);
+
+    if (isModelFlashing) {
+        if (timer_elapsed32(flashing_timer) > ANIM_FRAME_DURATION) {
+            flashing_timer = timer_read32();
+            flashing_frame += 1;
+            if (flashing_frame >= 10) {
+                flashing_frame = 0;
+                isModelFlashing = false;
+            }
+        }
+    }
+
+    if (!isModelFlashing || (flashing_frame & 1)) {
+        switch (default_layer_state) {
+            case 1<<0:
+                oled_write("manon", false);
+                break;
+            case 1<<4:
+                oled_write("andi ", false);
+                break;
+            default:
+                oled_write("undef", false);
+        }
+    } else {
+        oled_write("     ", false);
+    }
+
 
     /* Print current layer */
     oled_set_cursor(0, 3);
 
     oled_write("LAYER", false);
 
-    switch (get_highest_layer(layer_state)) {
+    switch (get_highest_layer(layer_state) % 4) {
         case 0:
             oled_write("base ", false);
             break;
@@ -305,9 +406,35 @@ bool oled_task_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    static uint16_t default_layer_timer;
+
     switch (keycode) {
-        /* KEYBOARD PET STATUS START */
  
+        case DF(0):
+            if(record->event.pressed) {
+                default_layer_timer = timer_read();
+            } else {
+                if (timer_elapsed(default_layer_timer) > TAPPING_TERM) {
+                    set_single_persistent_default_layer(0);
+                    isModelFlashing = true;
+                    flashing_frame = 0;
+                }
+            }
+            break;
+        case DF(4):
+            if(record->event.pressed) {
+                default_layer_timer = timer_read();
+            } else {
+                if (timer_elapsed(default_layer_timer) > TAPPING_TERM) {
+                    set_single_persistent_default_layer(4);
+                    isModelFlashing = true;
+                    flashing_frame = 0;
+                }
+            }
+            break;
+
+        /* KEYBOARD PET STATUS START */
+
         case KC_LCTL:
             isSneaking = record->event.pressed;
             break;
