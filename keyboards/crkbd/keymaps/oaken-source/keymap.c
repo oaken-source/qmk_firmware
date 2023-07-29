@@ -18,27 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 #include <stdio.h>
-#include <keymap_german.h>
 
 #include "keymap.def"
-
-const key_override_t comm_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_COMM, DE_LABK, 1<<4);
-const key_override_t dot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_DOT, DE_RABK, 1<<4);
-const key_override_t scln_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_SCLN, DE_COLN, 1<<4);
-const key_override_t quot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_QUOT, DE_DQUO, 1<<4);
-const key_override_t slsh_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_SLSH, DE_QUES, 1<<4);
-const key_override_t mins_key_override = ko_make_with_layers(MOD_MASK_SHIFT, DE_MINS, DE_UNDS, 1<<4);
-
-// This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-	&comm_key_override,
-  &dot_key_override,
-  &scln_key_override,
-  &quot_key_override,
-  &slsh_key_override,
-  &mins_key_override,
-	NULL // Null terminate the array of overrides!
-};
 
 #ifdef OLED_ENABLE
 
@@ -204,7 +185,7 @@ static void print_logo_narrow(void) {
 
     /* version */
     oled_set_cursor(0, 4);
-    oled_write(" v1.0", false);
+    oled_write(" v1.1", false);
 
     /* wpm counter */
     oled_set_cursor(0, 14);
@@ -236,23 +217,7 @@ static void print_status_narrow(void) {
     oled_set_cursor(0, 3);
 
     oled_write("LAYER", false);
-
-    switch (get_highest_layer(layer_state)) {
-        case 0:
-            oled_write("base ", false);
-            break;
-        case 1:
-            oled_write("lower ", false);
-            break;
-        case 2:
-            oled_write("raise", false);
-            break;
-        case 3:
-            oled_write("adjst", false);
-            break;
-        default:
-            oled_write("Undef", false);
-    }
+    print_layer_name();
 
     /* KEYBOARD PET RENDER START */
 
@@ -315,7 +280,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-void matrix_init_user(void) {
+void keyboard_post_init_user(void) {
     rgb_matrix_mode(RGB_MATRIX_TYPING_HEATMAP);
 };
 
