@@ -16,7 +16,7 @@ tap_dance_action_t tap_dance_actions[] = {
 #define HOME_J LSFT_T(KC_J)
 #define HOME_K LCTL_T(KC_K)
 #define HOME_L LALT_T(KC_L)
-#define HOME_SCL LGUI_T(KC_SCLN)
+#define HOME_SLS LGUI_T(KC_SLSH)
 
 #define BOTT_X RALT_T(KC_X)
 #define BOTT_DOT RALT_T(KC_DOT)
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Z,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  TD(TD_LSFT),  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCL, KC_QUOT,
+  TD(TD_LSFT),  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SLS, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,    KC_Y,  BOTT_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,BOTT_DOT, KC_MINS, KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
